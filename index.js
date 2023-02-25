@@ -16,8 +16,8 @@ app.use(cors());
 app.use("/", clientRoutes);
 app.use("/shops", shopRoutes);
 
-// const CONNNECTION_URL = "mongodb+srv://gaurav:gaurav@cluster0.hysswpx.mongodb.net/?retryWrites=true&w=majority";
-const CONNNECTION_URL = "mongodb://localhost:27017";
+const CONNNECTION_URL = "mongodb+srv://gaurav:gaurav@cluster0.hysswpx.mongodb.net/?retryWrites=true&w=majority";
+// const CONNNECTION_URL = "mongodb://localhost:27017";
 const PORT = process.env.PORT || 5000;
 
 mongoose.set("strictQuery", false);
