@@ -1,5 +1,6 @@
 import ShopDetails from "../models/shops.js";
 
+
 export const getShops = async (req, res) => {
     try {
         const Shops = await ShopDetails.find();
@@ -15,7 +16,8 @@ export const addShop = async (req, res) => {
     
     try {
         await newShop.save();
-        res.status(201).json(newShop);
+        // res.status(201).json(newShop);
+        res.redirect('/add-shop');
     } catch (error) {
         res.status(409).json({message: error.message});
     }
