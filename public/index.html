@@ -39,18 +39,39 @@
     </nav>
     <div class="container">
 
-
-        <!-- <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div> -->
+        <ul class="shop-list"></ul>
         
 
     </div>
+    <script>
+
+        function addData(text) {
+            var shopList = document.querySelector('.shop-list');
+            // shopList.appendChild(`<li>${key}</li>`);
+
+            for (let i = 0; i < text.length; i++) {
+                console.log(text[i]);
+
+                var li = document.createElement("LI");
+                var name = document.createTextNode(text[i].name);
+                var cusine = document.createTextNode(text[i].cusines);
+                var p1 = document.createElement("P");
+                var p2 = document.createElement("P");
+                p1.appendChild(name);
+                p2.appendChild(cusine);
+                li.appendChild(p1);
+                li.appendChild(p2);
+                shopList.appendChild(li);
+            }
+        }
+
+        fetch('http://localhost:5000/shops', {
+            headers: {
+                'Accept': 'json'
+            }
+        }).then(response => response.json()).then(text => addData(text));
+        
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>
