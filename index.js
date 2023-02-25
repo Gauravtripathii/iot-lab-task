@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 
+import clientRoutes from "./routes/client.js";
 import shopRoutes from "./routes/shops.js";
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 // routes
+app.use("/", clientRoutes);
 app.use("/shops", shopRoutes);
 
 // const CONNNECTION_URL = "mongodb+srv://gaurav:gaurav@cluster0.hysswpx.mongodb.net/?retryWrites=true&w=majority";
