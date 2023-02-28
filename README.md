@@ -20,7 +20,7 @@ Users should be able to :
 
 ### Screen Recording of the app
 
-![](./screen.mp4)
+![](./screen.gif)
 
 ## My Process
 
